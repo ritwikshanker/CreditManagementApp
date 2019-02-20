@@ -6,6 +6,10 @@
  * Time: 11:45 AM
  */
 include "connect.php";
+session_start();
+$User_id = $_GET['a'];
+//var_dump(get_defined_vars());
+//print_r($_POST);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,22 +27,19 @@ include "connect.php";
 <div class="container-fluid" style="overflow-x:auto">
     <table id="Allusers">
         <tr>
-            <th style="width:60px;">Info</th>
             <th>Name</th>
             <th>Email</th>
-            <!--            <th>Current Credit</th>-->
+            <th>Current Credit</th>
         </tr>
         <?php
-        $sql = "SELECT * FROM `user` ";
+        //        $User_id = $_SESSION['Selected_User_Id'];
+        $sql = "SELECT * FROM `user` where `id`='$User_id'";
         $result = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($result)) { ?>
             <tr>
-                <td><input type="radio" name="DisplayUserDetails" value="<?php echo $row["id"]; ?>"
-                           onclick="ShowAssociatedUser(this.value);"></td>
                 <td><?php echo $row["name"]; ?></td>
                 <td><?php echo $row["email"]; ?></td>
-                <!--                <td>--><?php //echo $row["current_credit"];
-                ?><!--</td>-->
+                <td><?php echo $row["current_credit"]; ?></td>
             </tr>
             <?php
         } ?>
@@ -47,6 +48,6 @@ include "connect.php";
 <br>
 <br>
 <div class="text-center">
-    <a class="btn btn-primary" href="./selectuser.php" role="button" target="_self">View User</a>
+    <a class="btn btn-dark" href="selectusertransfer.php" role="button" target="_self">Select User to Transfer Credit</a>
 </div>
 </body>

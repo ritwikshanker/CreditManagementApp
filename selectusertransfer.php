@@ -22,7 +22,7 @@ session_start();
 
 </head>
 <body>
-<form method="POST" action="selectuser.php" id="AllUserForm">
+<form method="POST" action="transaction.php" id="SelectUser">
     <div class="container-fluid" style="overflow-x:auto">
         <table id="Allusers">
             <tr>
@@ -43,8 +43,8 @@ session_start();
                     <?php //echo $row["id"]; ?><!--</a></td>-->
                     <td><?php echo $row["name"]; ?></td>
                     <td><?php echo $row["email"]; ?></td>
-                    <td align="center"><a href="selectuser.php?a= <?php echo $row['id'] ?>" class="btn btn-primary"
-                           href="selectuser.php" role="button" target="_self">View User</a>
+                    <td align="center"><a href="transaction.php?b= <?php echo $row['id'] ?>" class="btn btn-danger"
+                                          href="transaction.php" role="button" target="_self">Select User</a>
                     </td><!--                <td>--><?php //echo $row["current_credit"];
                     ?><!--</td>-->
                 </tr>
