@@ -3,6 +3,7 @@
     <words>
       <w>selectuser</w>
       <w>selectusertransfer</w>
+      <w>tcomplete</w>
     </words>
   </dictionary>
 </component>

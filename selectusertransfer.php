@@ -29,6 +29,7 @@ session_start();
                 <!--                <th style="width:60px;">Info</th>-->
                 <th>Name</th>
                 <th>Email</th>
+                <th>Current Credit</th>
                 <th>Info</th>
                 <!--            <th>Current Credit</th>-->
             </tr>
@@ -43,6 +44,7 @@ session_start();
                     <?php //echo $row["id"]; ?><!--</a></td>-->
                     <td><?php echo $row["name"]; ?></td>
                     <td><?php echo $row["email"]; ?></td>
+                    <td><?php echo $row["current_credit"]; ?></td>
                     <td align="center"><a href="transaction.php?b= <?php echo $row['id'] ?>" class="btn btn-danger"
                                           href="transaction.php" role="button" target="_self">Select User</a>
                     </td><!--                <td>--><?php //echo $row["current_credit"];
