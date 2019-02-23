@@ -8,6 +8,7 @@
 include 'connect.php';
 session_start();
 $TransferUserID = $_GET['b'];
+$_SESSION["R_ID"] = $TransferUserID;
 $sql = "SELECT * FROM `user` where `id`='$TransferUserID'";
 $result = mysqli_query($conn, $sql);
 
@@ -27,24 +28,24 @@ while ($row = mysqli_fetch_array($result)) {
     <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<form method="POST" action="transfer.php" id="trans_amount">
+<form method="GET" action="tcomplete.php" id="trans_amount">
     <div class="container-fluid" style="overflow-x:auto">
         <table id="Allusers">
             <tr>
                 <!--                <th style="width:60px;">Info</th>-->
-                <th>Transferee</th>
-                <th>Receiver</th>
-                <th>Amount</th>
-                <th>Transfer</th>
+                <th align="center">Transferee</th>
+                <th align="center">Receiver</th>
+                <th align="center">Amount</th>
+                <th align="center">Transfer</th>
             </tr>
             <tr>
                 <td><?php echo $_SESSION["T_User"]; ?></td>
                 <td><?php echo $_SESSION["Transfer_User"]; ?></td>
-                <td><label id="amount">
-                        <textarea required></textarea>
-                    </label></td>
                 <td align="center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <input name='amount' type='text' placeholder="Enter amount here" required/>
+                </td>
+                <td align="center">
+                    <input type="submit" class="btn btn-success" name="button"/>
                 </td>
             </tr>
 </form>

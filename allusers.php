@@ -37,14 +37,13 @@ session_start();
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
-                    <!--                    <td><input type="radio" name="DisplayUserDetails" value="-->
                     <?php //echo $row["id"]; ?><!--"></td>-->
                     <!--                    <td><a href="selectuser.php?a= --><?php //echo $row['id']?><!--">-->
                     <?php //echo $row["id"]; ?><!--</a></td>-->
                     <td><?php echo $row["name"]; ?></td>
                     <td><?php echo $row["email"]; ?></td>
                     <td align="center"><a href="selectuser.php?a= <?php echo $row['id'] ?>" class="btn btn-primary"
-                           href="selectuser.php" role="button" target="_self">View User</a>
+                                          href="selectuser.php" role="button" target="_self">View User</a>
                     </td><!--                <td>--><?php //echo $row["current_credit"];
                     ?><!--</td>-->
                 </tr>
@@ -56,5 +55,8 @@ session_start();
 </form>
 <br>
 <br>
+<div class="text-center">
+    <a class="btn btn-primary" href="./index.php" role="button" target="_self">HomePage</a>
+</div>
 </body>
 </html>

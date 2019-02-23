@@ -2,14 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: Ritwik Shanker
- * Date: 20-02-2019
- * Time: 11:45 AM
+ * Date: 23-02-2019
+ * Time: 06:05 PM
  */
 include "connect.php";
 session_start();
-$User_id = $_GET['a'];
-//var_dump(get_defined_vars());
-//print_r($_POST);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,27 +18,25 @@ $User_id = $_GET['a'];
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css"/>
-</head>
 
+
+</head>
 <body>
 <div class="container-fluid" style="overflow-x:auto">
     <table id="Allusers">
         <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Current Credit</th>
+            <th>Transfer Amount</th>
+            <th>Sender</th>
+            <th>Receiver</th>
         </tr>
         <?php
-        //        $User_id = $_SESSION['Selected_User_Id'];
-        $sql = "SELECT * FROM `user` where `id`='$User_id'";
+        $sql = "SELECT * FROM `transfers`";
         $result = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($result)) { ?>
             <tr>
-                <td><?php $_SESSION["T_User"] = $row["name"];
-                    $_SESSION["T_ID"] = $row["id"];
-                    echo $row["name"]; ?></td>
-                <td><?php echo $row["email"]; ?></td>
-                <td><?php echo $row["current_credit"]; ?></td>
+                <td><?php echo $row["transfer_amount"]; ?></td>
+                <td><?php echo $row["sender_name"]; ?></td>
+                <td><?php echo $row["receiver_name"]; ?></td>
             </tr>
             <?php
         } ?>
@@ -50,7 +45,7 @@ $User_id = $_GET['a'];
 <br>
 <br>
 <div class="text-center">
-    <a class="btn btn-dark" href="selectusertransfer.php" role="button" target="_self">Select User to Transfer
-        Credit</a>
+    <a class="btn btn-primary" href="./index.php" role="button" target="_self">HomePage</a>
 </div>
 </body>
+</html>

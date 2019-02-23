@@ -1,15 +1,17 @@
-#Allusers{
+#Allusers {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
     border-style: solid groove;
     margin-top: 5%;
 }
+
 #Allusers td, #Allusers th {
     border: 1px solid #ddd;
     padding: 8px;
     overflow: hidden;
 }
+
 #Allusers tr:nth-child(even) {
     background-color: #f2f2f2;
 }
@@ -25,6 +27,33 @@
     background-color: #555;
     color: white;
 }
-body{
+
+body {
     background: lightsteelblue;
+}
+
+.alert {
+    padding: 20px;
+    background-color: green;
+    color: white;
+}
+.alert2 {
+    padding: 20px;
+    background-color: red;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
 }

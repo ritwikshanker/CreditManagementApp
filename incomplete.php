@@ -1,6 +1,19 @@
 <?php
-include 'connect.php';
+/**
+ * Created by PhpStorm.
+ * User: Ritwik Shanker
+ * Date: 23-02-2019
+ * Time: 07:10 PM
+ */
 session_start();
+include "connect.php";
+if (isset($_GET["mess"]))
+{
+    $m = $_GET["mess"];
+    unset($_GET["mess"]);
+    ?>
+    <?php
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,18 +25,17 @@ session_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css"/>
+    <meta http-equiv="refresh" content="5;url=./index.php"/>
 
 </head>
 <body>
-<h1 align="center">Welcome to Credit Management Application</h1>
-<br>
-<div class="text-center">
-    <a class="btn btn-primary" href="./allusers.php" role="button" target="_self">View All Users</a>
+<div class="alert2" align="center">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong>Transaction Unsuccessful!</strong>
+    <div id="top">
+        <h2><?php echo $m; ?></h2>
+    </div>
 </div>
-<br>
-<div class="text-center">
-    <a class="btn btn-primary" href="./transfers.php" role="button" target="_self">View All Transfers</a>
-</div>
+
 </body>
 </html>
-

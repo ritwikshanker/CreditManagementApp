@@ -26,29 +26,22 @@ session_start();
     <div class="container-fluid" style="overflow-x:auto">
         <table id="Allusers">
             <tr>
-                <!--                <th style="width:60px;">Info</th>-->
                 <th>Name</th>
                 <th>Email</th>
                 <th>Current Credit</th>
                 <th>Info</th>
-                <!--            <th>Current Credit</th>-->
             </tr>
             <?php
             $sql = "SELECT * FROM `user`";
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
-                    <!--                    <td><input type="radio" name="DisplayUserDetails" value="-->
-                    <?php //echo $row["id"]; ?><!--"></td>-->
-                    <!--                    <td><a href="selectuser.php?a= --><?php //echo $row['id']?><!--">-->
-                    <?php //echo $row["id"]; ?><!--</a></td>-->
                     <td><?php echo $row["name"]; ?></td>
                     <td><?php echo $row["email"]; ?></td>
                     <td><?php echo $row["current_credit"]; ?></td>
                     <td align="center"><a href="transaction.php?b= <?php echo $row['id'] ?>" class="btn btn-danger"
                                           href="transaction.php" role="button" target="_self">Select User</a>
-                    </td><!--                <td>--><?php //echo $row["current_credit"];
-                    ?><!--</td>-->
+                    </td>
                 </tr>
                 <?php
             } ?>
@@ -58,5 +51,8 @@ session_start();
 </form>
 <br>
 <br>
+<div class="text-center">
+    <a class="btn btn-primary" href="./index.php" role="button" target="_self">HomePage</a>
+</div>
 </body>
 </html>
