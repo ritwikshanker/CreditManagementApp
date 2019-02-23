@@ -19,7 +19,7 @@ session_start();
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css"/>
 
-
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 </head>
 <body>
 <div class="container-fluid" style="overflow-x:auto">
@@ -45,7 +45,7 @@ session_start();
 <br>
 <br>
 <div class="text-center">
-    <a class="btn btn-primary" href="./index.php" role="button" target="_self">HomePage</a>
+    <a class="btn btn-primary" href="./index.php" role="button" target="_self">Home Page</a>
 </div>
 </body>
 </html>

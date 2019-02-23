@@ -24,7 +24,7 @@ if ($CurrentMoney < $Trans_Amount)
     $msg = "Insufficient funds to transfer";
     echo("<script LANGUAGE='JavaScript'>window.location.href='incomplete.php?mess=" . "\"" . $msg . "\"';</script>");
 }
-else if ($Trans_Amount < 0)
+else if ($Trans_Amount <= 0)
 {
     $msg = "Cannot Transfer Negative Funds";
     echo("<script LANGUAGE='JavaScript'>window.location.href='incomplete.php?mess=" . "\"" . $msg . "\"';</script>");

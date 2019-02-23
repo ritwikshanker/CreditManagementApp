@@ -25,17 +25,21 @@ if (isset($_GET["mess"]))
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css"/>
-    <meta http-equiv="refresh" content="5;url=./index.php"/>
-
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 </head>
 <body>
 <div class="alert2" align="center">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <span id="closebutton" class="closebtn">&times;</span>
     <strong>Transaction Unsuccessful!</strong>
     <div id="top">
         <h2><?php echo $m; ?></h2>
     </div>
 </div>
+<script type="text/javascript">
+    document.getElementById("closebutton").onclick = function () {
+        location.href = "./index.php";
+    };
+</script>
 
 </body>
 </html>
