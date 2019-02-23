@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.0.1
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Feb 23, 2019 at 03:43 PM
+- Server version: 10.1.32-MariaDB
+- PHP Version: 7.2.5
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="creditmanage" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="transfers">
+                CREATE TABLE `transfers` (
+                  `transfer_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `transfer_amount` int(11) NOT NULL,
+                  `sender_name` text NOT NULL,
+                  `receiver_name` text NOT NULL,
+                  `sender_id` int(11) NOT NULL,
+                  `receiver_id` int(11) NOT NULL,
+                  PRIMARY KEY (`transfer_id`),
+                  UNIQUE KEY `transfers_transfer_id_uindex` (`transfer_id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="user">
+                CREATE TABLE `user` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` text NOT NULL,
+                  `email` text NOT NULL,
+                  `current_credit` int(11) NOT NULL DEFAULT '0',
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `user_id_uindex` (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'creditmanage'
+    -->
+    <database name="creditmanage">
+        <!-- Table transfers -->
+        <table name="transfers">
+            <column name="transfer_id">1</column>
+            <column name="transfer_amount">100</column>
+            <column name="sender_name">Ritwik</column>
+            <column name="receiver_name">Ayush</column>
+            <column name="sender_id">1</column>
+            <column name="receiver_id">2</column>
+        </table>
+        <!-- Table user -->
+        <table name="user">
+            <column name="id">1</column>
+            <column name="name">Ritwik</column>
+            <column name="email">ritwikshanker@yahoo.in</column>
+            <column name="current_credit">97790</column>
+        </table>
+        <table name="user">
+            <column name="id">2</column>
+            <column name="name">Ayush</column>
+            <column name="email">ayush.sri@gmail.com</column>
+            <column name="current_credit">5100</column>
+        </table>
+        <table name="user">
+            <column name="id">3</column>
+            <column name="name">Bhanu</column>
+            <column name="email">bhanup@gmail.com</column>
+            <column name="current_credit">56023</column>
+        </table>
+        <table name="user">
+            <column name="id">4</column>
+            <column name="name">Sparsh</column>
+            <column name="email">sparshjs@gmail.com</column>
+            <column name="current_credit">3520</column>
+        </table>
+        <table name="user">
+            <column name="id">5</column>
+            <column name="name">Amit</column>
+            <column name="email">amit.sr@gmail.com</column>
+            <column name="current_credit">1560</column>
+        </table>
+        <table name="user">
+            <column name="id">6</column>
+            <column name="name">Shantanu</column>
+            <column name="email">shan.kap@hotmail.com</column>
+            <column name="current_credit">89071</column>
+        </table>
+        <table name="user">
+            <column name="id">7</column>
+            <column name="name">Ravi</column>
+            <column name="email">raviduos@hotmail.com</column>
+            <column name="current_credit">15630</column>
+        </table>
+        <table name="user">
+            <column name="id">8</column>
+            <column name="name">Ayush Jain</column>
+            <column name="email">ayushjain@yahoo.in</column>
+            <column name="current_credit">25000</column>
+        </table>
+        <table name="user">
+            <column name="id">9</column>
+            <column name="name">Rishabh</column>
+            <column name="email">rishabhemail@gmail.com</column>
+            <column name="current_credit">13490</column>
+        </table>
+        <table name="user">
+            <column name="id">10</column>
+            <column name="name">Aseem</column>
+            <column name="email">aseemagr@gmail.com</column>
+            <column name="current_credit">3430</column>
+        </table>
+    </database>
+</pma_xml_export>
